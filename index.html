@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animation 2D</title>
+  <meta name="description" content="Portfolio d'animation 2D : courts métrages, clips, publicités et génériques animés image par image.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='15' cy='20' rx='11' ry='8' fill='none' stroke='%2324262B' stroke-width='3'/%3E%3Ccircle cx='27' cy='6' r='3.5' fill='%23BF3527'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;700;800&family=Funnel+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=11">
+</head>
+<body>
+  <a class="evitement" href="#travaux">Aller aux travaux</a>
+
+  <header class="entete">
+    <div class="conteneur entete-inner">
+      <a class="marque" href="#haut" data-champ="nom"></a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#travaux">Travaux</a>
+        <a href="#methode" class="nav-secondaire">Méthode</a>
+        <a href="#apropos">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero conteneur" id="haut">
+      <div class="hero-texte">
+        <h1 class="hero-nom" data-champ="nom"></h1>
+        <p class="hero-metier" data-champ="metier"></p>
+        <p class="hero-accroche" data-champ="accroche"></p>
+        <div class="actions">
+          <button class="bouton principal" type="button" data-showreel>
+            <svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1.5v13l12-6.5z" fill="currentColor"/></svg>
+            Voir le showreel
+          </button>
+          <a class="bouton" href="#contact">Me contacter</a>
+        </div>
+      </div>
+      <div class="hero-scene">
+        <canvas id="scene3d" role="img" aria-label="Un disque d'animation lumineux avec une pile de douze dessins, feuilletés image par image."></canvas>
+        <p class="aide">
+          <svg class="aide-fleche" width="46" height="34" viewBox="0 0 46 34" aria-hidden="true">
+            <path d="M3 30c9-1.5 20-6 28.5-16.5 2-2.5 3.6-5 4.8-7.8" />
+            <path d="M28.5 7.2c3-.9 5.7-2 8-3.6.6 3 .7 6.3.4 9.6" />
+          </svg>
+          Glissez sur le disque pour feuilleter les dessins.
+        </p>
+      </div>
+    </section>
+
+    <section class="section travaux" id="travaux">
+      <div class="conteneur">
+        <h2>Travaux</h2>
+        <p class="intro">Survolez un projet pour voir un extrait, cliquez pour le regarder en entier.</p>
+        <div class="travaux-grille">
+          <div class="feuille-expo">
+            <div class="feuille-entetes" aria-hidden="true">
+              <span>Projet</span><span>Pour</span><span>Année</span><span class="a-droite">Durée</span>
+            </div>
+            <ul class="liste-projets" id="liste-projets"></ul>
+          </div>
+          <aside class="apercu" aria-label="Aperçu du projet">
+            <div class="apercu-ecran" id="apercu-ecran"></div>
+            <p class="apercu-titre" id="apercu-titre"></p>
+            <p class="apercu-texte" id="apercu-texte"></p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section methode" id="methode">
+      <div class="conteneur">
+        <h2>Comment je travaille</h2>
+        <p class="intro">Six étapes, de l'idée au fichier final. Je peux prendre en charge tout le film ou seulement une partie.</p>
+        <ol class="charte">
+          <li class="cle" style="--pos: 0; --ancre: 0%">
+            <span class="charte-num">1</span>
+            <h3>Storyboard</h3>
+            <p>Le découpage de l'histoire en plans, crayonné rapidement.</p>
+          </li>
+          <li style="--pos: 0.104">
+            <span class="charte-num">2</span>
+            <h3>Animatique</h3>
+            <p>Le storyboard monté sur le son, pour caler le rythme.</p>
+          </li>
+          <li style="--pos: 0.352">
+            <span class="charte-num">3</span>
+            <h3>Roughs</h3>
+            <p>Les poses clés puis les intervalles, au crayon bleu.</p>
+          </li>
+          <li style="--pos: 0.648">
+            <span class="charte-num">4</span>
+            <h3>Clean-up</h3>
+            <p>Un trait propre et régulier sur chaque dessin.</p>
+          </li>
+          <li style="--pos: 0.896">
+            <span class="charte-num">5</span>
+            <h3>Couleur</h3>
+            <p>Mise en couleur des personnages et des décors.</p>
+          </li>
+          <li class="cle" style="--pos: 1; --ancre: -100%">
+            <span class="charte-num">6</span>
+            <h3>Compositing</h3>
+            <p>Assemblage, effets, son et export final.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section apropos" id="apropos">
+      <div class="conteneur apropos-grille">
+        <div class="portrait" data-portrait></div>
+        <div class="apropos-texte">
+          <h2>À propos</h2>
+          <div class="bio" data-bio></div>
+          <div class="outils">
+            <h3>Outils</h3>
+            <p data-outils></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <canvas class="contact-vitesse" aria-hidden="true"></canvas>
+      <div class="conteneur">
+        <h2>Un projet à animer&nbsp;?</h2>
+        <p class="intro">Clip, publicité, générique ou court métrage&nbsp;: racontez-moi votre projet, je vous réponds avec un premier calendrier.</p>
+        <a class="email" data-email href="#"></a>
+        <ul class="reseaux" data-reseaux></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied-inner">
+      <p>© <span data-annee></span> <span data-champ="nom"></span></p>
+      <canvas class="carnet" width="212" height="120" aria-hidden="true"></canvas>
+      <a href="#haut">Retour en haut</a>
+    </div>
+  </footer>
+
+  <dialog class="visionneuse" id="visionneuse" aria-labelledby="visionneuse-titre">
+    <div class="visionneuse-corps">
+      <div class="visionneuse-haut">
+        <div>
+          <h2 id="visionneuse-titre"></h2>
+          <p class="visionneuse-meta" id="visionneuse-meta"></p>
+        </div>
+        <button class="fermer" type="button" data-fermer aria-label="Fermer">
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="visionneuse-ecran" id="visionneuse-ecran"></div>
+      <p class="visionneuse-texte" id="visionneuse-texte"></p>
+    </div>
+  </dialog>
+
+  <script src="js/vendor/three.min.js"></script>
+  <script src="js/config.js?v=11"></script>
+  <script src="js/dessins.js?v=11"></script>
+  <script src="js/feuilles.js?v=11"></script>
+  <script src="js/effets.js?v=11"></script>
+  <script src="js/main.js?v=11"></script>
+  <script src="js/lecture.js?v=12"></script>
+  <script src="js/stats.js?v=13"></script>
+  <script src="js/scene3d.js?v=11"></script>
+</body>
+</html>
